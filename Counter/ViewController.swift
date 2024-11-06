@@ -8,18 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var counter:Int: = 0
     
+    // MARK: - Properties
+    var counter: Int = 0
     
+    // MARK: - IBOutlets
+    @IBOutlet weak var incrementButton: UIButton!
+    @IBOutlet weak var countLabel: UILabel!
     
+    // MARK: - IBFunctions
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        counter += 1
+        countLabel.text = "Значение счётчика: \(counter)"
+    }
     
-    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        countLabel?.text = "Значение счётчика: \(counter)"
     }
-
-
 }
 
